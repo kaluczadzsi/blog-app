@@ -1,14 +1,20 @@
-import Search from './Search';
+import { useEffect, useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { fetchPosts } from '../features/posts/postsSlice';
 import Posts from './Posts';
-import { Post } from '../types/post';
-import { useContext, useState } from 'react';
-import { PostContext } from '../../providers/PostProvider';
+import Search from './Search';
 
 const Home = () => {
-  const posts = useContext(PostContext);
+  const posts = useAppSelector((state) => state.posts);
+  const dispatch = useAppDispatch();
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredPosts = posts.filter((post: Post) => {
+  useEffect(() => {
+    dispatch(fetchPosts());
+    console.log(posts);
+  }, []);
+
+  const filteredPosts = posts.filter((post) => {
     return post.title.toLowerCase().includes(searchTerm.toLowerCase());
   });
 

@@ -1,9 +1,7 @@
-import { useContext } from 'react';
-import { PostContext } from '../../providers/PostProvider';
-import { Post } from '../types/post';
+import { FilteredPostProps } from '../../types/filteredpostprops';
+import { Post } from '../../types/post';
 
-const Posts = ({ filteredPosts }: []) => {
-  const posts = useContext(PostContext);
+const Posts = ({ filteredPosts }: FilteredPostProps) => {
   return (
     <ul className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
       {filteredPosts.map((post: Post) => (

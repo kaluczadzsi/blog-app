@@ -1,9 +1,5 @@
 import { NavLink } from 'react-router-dom';
-
-type ListItemProps = {
-  to: string;
-  label: string;
-};
+import { ListItemProps } from '../../types/listitemprops';
 
 const ListItem = ({ to, label }: ListItemProps) => {
   return (

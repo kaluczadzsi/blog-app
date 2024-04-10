@@ -1,8 +1,15 @@
-import { useState } from 'react';
-import SetSearchTerm from '../types/setsearchtherm';
+import { ChangeEvent, useState } from 'react';
+import { SearchProps } from '../../types/searchprops';
+import SearchInput from './SearchInput';
 
-const Search = ({ setSearchTerm }: SetSearchTerm) => {
+const Search = ({ setSearchTerm }: SearchProps) => {
   const [input, setInput] = useState('');
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const inputValue = e.target.value;
+    setInput(inputValue);
+    setSearchTerm(inputValue);
+  };
 
   return (
     <form
@@ -12,17 +19,7 @@ const Search = ({ setSearchTerm }: SetSearchTerm) => {
       <label className="absolute left-[-99999px]" htmlFor="search">
         Search
       </label>
-      <input
-        className=" outline-none w-full p-1 rounded-sm"
-        type="text"
-        id="search"
-        placeholder="Search"
-        value={input}
-        onChange={(e) => {
-          setInput(e.target.value);
-          setSearchTerm(input);
-        }}
-      />
+      <SearchInput value={input} onChange={handleInputChange} />
     </form>
   );
 };

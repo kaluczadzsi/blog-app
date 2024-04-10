@@ -1,11 +1,11 @@
-import ListItem from './ListItem';
+import NavListItem from './NavListItem';
 
 const NavLinks = () => {
   return (
     <ul className="flex gap-20">
-      <ListItem to="/home" label="Home" />
-      <ListItem to="/" label="Post" />
-      <ListItem to="/" label="About" />
+      <NavListItem to="/home" label="Home" />
+      <NavListItem to="/" label="Post" />
+      <NavListItem to="/" label="About" />
     </ul>
   );
 };

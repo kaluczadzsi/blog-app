@@ -1,18 +1,14 @@
-import Nav from './Nav';
 import { Outlet } from 'react-router-dom';
-import { PostProvider } from '../../providers/PostProvider';
+import Nav from './Nav';
 
 const Root = () => {
   return (
-    <PostProvider>
-      <div>
-        <Nav />
-
-        <div className="min-h-screen bg-[#333]">
-          <Outlet />
-        </div>
+    <div>
+      <Nav />
+      <div className="min-h-screen bg-[#333]">
+        <Outlet />
       </div>
-    </PostProvider>
+    </div>
   );
 };
 
