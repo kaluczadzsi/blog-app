@@ -8,6 +8,27 @@
   box-sizing: border-box;
 }
 
-.outlet-container {
-  min-height: 100vh;
+body {
+  animation: popup 1s ease-in-out;
+}
+
+h1 {
+  font-family: 'Indie Flower', cursive;
+}
+
+a.active {
+  color: #bc7a04;
+  background-color: #fceccd;
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 1.2;
+    transform: translateX(0%);
+  }
 }
