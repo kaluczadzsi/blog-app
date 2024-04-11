@@ -2,25 +2,42 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import store from '../store';
-import Home from './components/Home.tsx';
 import Root from './components/Root.tsx';
-import ErrorPage from './ErrorPage.tsx';
+import Error from './routes/Error.tsx';
+import Home from './routes/Home.tsx';
 
+import PostInfo from './components/PostInfo.tsx';
 import './index.css';
+import About from './routes/About.tsx';
+import Post from './routes/Post.tsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
-    errorElement: <ErrorPage />,
+    errorElement: <Error />,
     children: [
       {
         path: '/',
         element: <Home />,
       },
+
+      {
+        path: '/:id',
+        element: <PostInfo />,
+        errorElement: <Error />,
+      },
       {
         path: '/home',
         element: <Home />,
+      },
+      {
+        path: '/about',
+        element: <About />,
+      },
+      {
+        path: '/post',
+        element: <Post />,
       },
     ],
   },

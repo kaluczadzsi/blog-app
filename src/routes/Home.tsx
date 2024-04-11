@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
+import Posts from '../components/Posts';
+import Search from '../components/Search';
 import { useAppDispatch, useAppSelector } from '../features/hooks';
 import { fetchPosts } from '../features/posts/postsSlice';
-import Posts from './Posts';
-import Search from './Search';
 
 const Home = () => {
   const posts = useAppSelector((state) => state.posts);
