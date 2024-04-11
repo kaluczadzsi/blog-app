@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks';
+import { useAppDispatch, useAppSelector } from '../features/hooks';
 import { fetchPosts } from '../features/posts/postsSlice';
 import Posts from './Posts';
 import Search from './Search';
@@ -11,7 +11,6 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(fetchPosts());
-    console.log(posts);
   }, []);
 
   const filteredPosts = posts.filter((post) => {
@@ -19,7 +18,7 @@ const Home = () => {
   });
 
   return (
-    <div className="px-5 py-2 h-full">
+    <div className="px-5 py-2 bg-silv">
       <Search setSearchTerm={setSearchTerm} />
       <Posts filteredPosts={filteredPosts} />
     </div>

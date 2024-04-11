@@ -9,7 +9,7 @@ const ListItem = ({ to, label }: ListItemProps) => {
         className={({ isActive }) =>
           `${
             isActive ? 'active' : ''
-          } px-[30px] py-[10px] rounded-3xl transition-all duration-300`
+          } px-[30px] py-[10px] rounded-3xl font-medium transition-all duration-300 hover:bg-silv`
         }
       >
         {label}

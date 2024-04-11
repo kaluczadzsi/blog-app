@@ -8,27 +8,7 @@
   box-sizing: border-box;
 }
 
-body {
-  animation: popup 1s ease-in-out;
-}
-
-h1 {
-  font-family: 'Indie Flower', cursive;
-}
-
-a.active {
-  color: #bc7a04;
-  background-color: #fceccd;
-}
-
-@keyframes popup {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-
-  100% {
-    opacity: 1.2;
-    transform: translateX(0%);
-  }
+.nav-links a.active {
+  background: #e6f7ff;
+  color: #087ea4;
 }
